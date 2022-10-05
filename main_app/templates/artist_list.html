@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Artists{% endblock %}
+
+{% block content %}
+
+<h1 class="title pt-5">Trending Artists</h1>
+<form class="mb-5" method="get">
+  <div class="field has-addons">
+    <div class="control">
+      <!--  Our input will search by name of artist  -->
+      <input class="input" type="text" name="name" placeholder="name" />
+    </div>
+    <div class="control">
+      <input class="button is-success" type="submit" value="Search" />
+    </div>
+  </div>
+  <!--  This anchor tag will redirect back to artist list without a query param -->
+  <a class="button is-dark" href="{% url 'artist_list' %}">Clear Search</a>
+</form>
+<div class="gallery">
+  {% for artist in artists %}
+
+    <div class="card">
+      <a href="/artists/{{artist.id}}/">
+        <div class="card-image">
+          <figure class="image is-square">
+            <img src="{{artist.img}}" alt="{{artist.name}}" />
+          </figure>
+        </div>
+        <div class="card-header">
+          <p class="card-header-title">{{artist.name}}</p>
+        </div>
+      </a>
+    </div>
+
+  {% empty %}
+  <article class="message">
+    <div class="message-header">
+      <p>No Artists Available</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

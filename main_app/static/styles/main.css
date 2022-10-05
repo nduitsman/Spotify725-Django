@@ -1,0 +1,58 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+}
+.detailsWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h1,
+h2,
+h3 {
+    color: #ffffff;
+}
+
+.title {
+    color: #ffffff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 30px;
+}
+
+.gallery .card {
+    transition: .1s linear;
+}
+
+.gallery .card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+p {
+    font-size: 12px;
+}
+
+.detail__songs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.song {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 0.1fr 3fr 1fr;
+    border-radius: 5px;
+}
+
+.song:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    cursor: pointer;
+}

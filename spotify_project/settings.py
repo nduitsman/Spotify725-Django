@@ -132,3 +132,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'main_app/static')]
 # Add this variable to specify where successful logins should redirect to
 LOGIN_REDIRECT_URL = '/artists/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Other settings above
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
